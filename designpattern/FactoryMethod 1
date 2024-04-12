@@ -157,3 +157,27 @@ Disadvantages of using Factory method:
     - In a Graphics system, depending upon the user’s input it can draw different shapes like rectangles, Square, Circle, etc. But for the ease of both developers as well as the client, we can use the factory method to create the instance depending upon the user’s input. Then we don’t have to change the client code for adding a new shape.
     -  On a Hotel booking site, we can book a slot for 1 room, 2 rooms, 3 rooms, etc. Here user can input the number of rooms he wants to book. Using the factory method, we can create a factory class Any Rooms which will help us to create the instance depending upon the user’s input. Again we don’t have to change the client’s code for adding the new facility.
 
+
+Eample 2:
+
+class Dog:
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        print(self.name)
+class Cat:
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        print(self.name)
+        
+def get_pet(pet_name="dog"):
+    pet= dict(dog=Dog( "hope"), cat=Cat("hello"))
+    return pet[pet_name]
+    
+asg = get_pet("dog")
+asg.speak()
+
+asg = get_pet("cat")
+asg.speak()
+
